@@ -57,8 +57,8 @@ export default function ProcessSection() {
 
         {/* Desktop horizontal */}
         <div className="hidden md:block relative">
-          {/* Progress line */}
-          <div className="absolute top-[52px] left-[12.5%] right-[12.5%] h-px bg-black/[0.08]">
+          {/* Progress line — sits below the numbers */}
+          <div className="absolute top-[110px] left-[12.5%] right-[12.5%] h-px bg-black/[0.08]">
             <motion.div
               className="h-full bg-accent origin-left"
               initial={{ scaleX: 0 }}
@@ -77,12 +77,15 @@ export default function ProcessSection() {
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
                 className="text-center"
               >
-                <div className="relative inline-flex items-center justify-center w-[104px] h-[104px] mb-6">
+                <div className="relative inline-flex items-center justify-center w-[104px] h-[104px] mb-2">
                   <span className="text-6xl font-display text-transparent [-webkit-text-stroke:1.5px_rgba(15,15,14,0.12)]">
                     {step.number}
                   </span>
+                </div>
+                {/* Dot marker on the line */}
+                <div className="flex justify-center mb-6">
                   <motion.div
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-accent"
+                    className="w-3 h-3 bg-accent"
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : { scale: 0 }}
                     transition={{ duration: 0.3, delay: 0.5 + i * 0.2 }}

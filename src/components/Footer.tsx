@@ -1,19 +1,15 @@
 "use client";
 
-import Image from "next/image";
-
 export default function Footer() {
   return (
     <footer className="py-12 border-t border-black/[0.06]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <Image
-              src="http://connectlife.com.br/wp-content/uploads/2024/09/cropped-Ativo-1.png"
+            <img
+              src="/logo.svg"
               alt="ConnectLife"
-              width={120}
-              height={32}
-              className="h-7 w-auto"
+              className="h-6 w-auto"
             />
           </div>
 

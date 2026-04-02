@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -26,12 +25,10 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <Image
-            src="http://connectlife.com.br/wp-content/uploads/2024/09/cropped-Ativo-1.png"
+          <img
+            src="/logo.svg"
             alt="ConnectLife"
-            width={140}
-            height={36}
-            className="h-8 w-auto"
+            className="h-7 w-auto"
           />
         </a>
 
@@ -46,7 +43,7 @@ export default function Navbar() {
             href="#processo"
             className="text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
-            Como trabalhamos
+            Como funciona
           </a>
           <a
             href="#portfolio"

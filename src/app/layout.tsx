@@ -53,10 +53,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${dmSerif.variable} ${geist.variable}`}>
       <head>
-        <link
-          rel="icon"
-          href="http://connectlife.com.br/wp-content/uploads/2024/09/cropped-Ativo-1.png"
-        />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className="font-sans antialiased">
         {children}

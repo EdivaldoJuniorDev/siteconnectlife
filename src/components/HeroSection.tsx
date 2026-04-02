@@ -3,7 +3,12 @@
 import { motion, useMotionValue, useTransform, useSpring, useAnimationFrame } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const techTags = ["Next.js", "Vercel", "Supabase", "Stripe"];
+const socialTags = [
+  "Entrega em 7 dias",
+  "+30 clínicas atendidas",
+  "Foco em captação",
+  "Resultado garantido",
+];
 
 /* ── Animated dots grid that reacts to mouse ── */
 function DotsGrid() {
@@ -268,7 +273,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="mt-12 flex flex-wrap gap-3 justify-center lg:justify-start"
             >
-              {techTags.map((tag, i) => (
+              {socialTags.map((tag, i) => (
                 <motion.span
                   key={tag}
                   initial={{ opacity: 0, y: 10 }}
