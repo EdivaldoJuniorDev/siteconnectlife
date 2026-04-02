@@ -26,9 +26,9 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
           <img
-            src="/logo.svg"
+            src="/logo.webp"
             alt="ConnectLife"
-            className="h-7 w-auto"
+            className="h-8 w-auto"
           />
         </a>
 

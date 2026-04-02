@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <img
-              src="/logo.svg"
+              src="/logo.webp"
               alt="ConnectLife"
-              className="h-6 w-auto"
+              className="h-7 w-auto"
             />
           </div>
 
