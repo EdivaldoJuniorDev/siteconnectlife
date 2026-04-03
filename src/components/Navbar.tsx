@@ -28,26 +28,40 @@ export default function Navbar() {
           <img
             src="/logo.webp"
             alt="ConnectLife"
-            className="h-8 w-auto"
+            className={`h-8 w-auto transition-all duration-300 ${
+              scrolled ? "" : "brightness-0 invert"
+            }`}
           />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
           <a
             href="#servicos"
-            className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+            className={`text-sm transition-colors ${
+              scrolled
+                ? "text-text-secondary hover:text-text-primary"
+                : "text-white/60 hover:text-white"
+            }`}
           >
             Serviços
           </a>
           <a
             href="#processo"
-            className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+            className={`text-sm transition-colors ${
+              scrolled
+                ? "text-text-secondary hover:text-text-primary"
+                : "text-white/60 hover:text-white"
+            }`}
           >
             Como funciona
           </a>
           <a
             href="#portfolio"
-            className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+            className={`text-sm transition-colors ${
+              scrolled
+                ? "text-text-secondary hover:text-text-primary"
+                : "text-white/60 hover:text-white"
+            }`}
           >
             Portfólio
           </a>
