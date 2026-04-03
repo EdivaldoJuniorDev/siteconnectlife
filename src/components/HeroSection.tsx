@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
 const pillars = [
-  { value: "95+", label: "PageSpeed" },
-  { value: "4K", label: "Imagens IA" },
   { value: "7 dias", label: "Entrega" },
-  { value: "Zero", label: "Estúdio" },
+  { value: "+30", label: "Clínicas" },
+  { value: "100%", label: "Foco captação" },
+  { value: "Garantido", label: "Resultado" },
 ];
 
 /* ── Scroll indicator ── */
@@ -59,8 +59,8 @@ export default function HeroSection() {
         </video>
 
         {/* Gradient overlays for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
       </div>
 
       {/* ── Subtle grain texture ── */}
@@ -69,29 +69,16 @@ export default function HeroSection() {
       {/* ── Content ── */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-24 pb-20">
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Eyebrow */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-accent text-sm font-medium tracking-wide uppercase mb-5"
-          >
-            Sites para profissionais de estética
-          </motion.p>
-
-          {/* Headline */}
+          {/* Headline - Pain point focused */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4.2rem] text-white leading-[1.08] tracking-tight"
+            transition={{ duration: 0.7, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4.2rem] text-white leading-[1.1] tracking-tight"
           >
-            O padrão visual de{" "}
+            Sua clínica está cheia de pacientes{" "}
             <br className="hidden sm:block" />
-            São Paulo — com{" "}
-            <span className="text-accent">performance</span>{" "}
-            <br className="hidden md:block" />
-            que ninguém em Manaus entrega.
+            — ou só de <span className="text-accent">seguidores?</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -100,15 +87,15 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.7,
-              delay: 0.25,
+              delay: 0.2,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="mt-7 text-lg md:text-xl text-white/50 max-w-xl leading-relaxed"
+            className="mt-7 text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed"
           >
-            Vídeo na hero, imagens 4K geradas por IA, site que carrega em menos
-            de 3 segundos.{" "}
-            <strong className="text-white/70 font-medium">
-              Sem estúdio. Sem fotógrafo. Sem maquiadora.
+            Todo mês tem paciente novo pesquisando no Google pela sua especialidade
+            em Manaus. A pergunta é:{" "}
+            <strong className="text-white font-medium">
+              ele está encontrando você ou o concorrente?
             </strong>
           </motion.p>
 
@@ -118,18 +105,18 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.7,
-              delay: 0.4,
+              delay: 0.35,
               ease: [0.22, 1, 0.36, 1],
             }}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="https://wa.me/5592982078515?text=Ol%C3%A1%2C%20quero%20um%20site%20para%20minha%20cl%C3%ADnica"
+              href="https://wa.me/5592982078515?text=Ol%C3%A1%2C%20quero%20ser%20encontrado%20primeiro"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-accent text-white text-sm font-medium hover:bg-accent-light transition-all duration-200 hover:-translate-y-0.5"
             >
-              Quero esse resultado
+              Quero ser encontrado primeiro
               <svg
                 width="16"
                 height="16"
@@ -147,7 +134,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#processo"
-              className="inline-flex items-center justify-center px-7 py-3.5 border border-white/15 text-white/80 text-sm font-medium hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center px-7 py-3.5 border border-white/20 text-white/80 text-sm font-medium hover:bg-white/10 transition-colors"
             >
               Ver como funciona
             </a>
@@ -157,20 +144,18 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-14 flex flex-wrap gap-10"
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="mt-14 flex flex-wrap gap-12 text-sm"
           >
             {pillars.map((item, i) => (
               <motion.div
                 key={item.label}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
+                transition={{ duration: 0.4, delay: 0.75 + i * 0.08 }}
               >
-                <div className="text-2xl md:text-3xl font-display text-accent leading-none">
-                  {item.value}
-                </div>
-                <div className="text-[11px] text-white/35 uppercase tracking-wider mt-1.5">
+                <div className="text-white/90 font-medium">{item.value}</div>
+                <div className="text-white/40 uppercase tracking-wider text-[10px] mt-1">
                   {item.label}
                 </div>
               </motion.div>
