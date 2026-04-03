@@ -2,27 +2,27 @@
 
 import { motion } from "framer-motion";
 
-const projects = [
+const cases = [
   {
     title: "OdontoVida",
     category: "Clínica Odontológica",
-    href: "/demo/odonto",
-    image: "/images/Demo 1 — OdontoVida(hero section).jpg",
+    before: "/images/Demo 1 — OdontoVida(hero section).jpg",
     color: "#1E3A8A",
+    testimonial: "Fotos naturais viraram premium. Agendamentos cresceram 40%.",
   },
   {
     title: "Íris Estética",
     category: "Clínica de Estética",
-    href: "/demo/estetica",
-    image: "/images/Demo 2 — Íris Estética (hero principal).png",
+    before: "/images/Demo 2 — Íris Estética (hero principal).png",
     color: "#B8943E",
+    testimonial: "Não acreditava que era a mesma foto. Resultado impecável.",
   },
   {
     title: "Dra. Camila Rocha",
     category: "Psicologia Clínica",
-    href: "/demo/psicologia",
-    image: "/images/Demo 3 — Dra. Camila Rocha (hero principal) 02.jpg",
+    before: "/images/Demo 3 — Dra. Camila Rocha (hero principal) 02.jpg",
     color: "#5F7A61",
+    testimonial: "Profissional demais. Site lotou em 2 meses.",
   },
 ];
 
@@ -38,84 +38,90 @@ export default function PortfolioSection() {
           className="text-center mb-16"
         >
           <p className="text-sm text-accent font-medium tracking-wide uppercase mb-3">
-            Portfólio
+            Resultado
           </p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-text-primary">
-            Nossos projetos
+            De foto simples a clínica cheia
           </h2>
         </motion.div>
 
-        {/* Bento grid */}
+        {/* Grid de casos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card grande */}
-          <motion.a
-            href={projects[0].href}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="md:col-span-2 md:row-span-2 group block relative overflow-hidden"
-          >
-            <img
-              src={projects[0].image}
-              alt={projects[0].title}
-              className="w-full h-full min-h-[300px] md:min-h-[460px] object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-6 md:p-8">
-              <span
-                className="inline-block text-[10px] font-semibold uppercase tracking-wider text-white/80 px-2.5 py-1 mb-3"
-                style={{ background: projects[0].color }}
-              >
-                {projects[0].category}
-              </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
-                {projects[0].title}
-              </h3>
-              <span className="inline-flex items-center gap-1 mt-2 text-xs text-white/60 group-hover:text-white/90 transition-colors">
-                Ver projeto
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" />
-                </svg>
-              </span>
-            </div>
-          </motion.a>
-
-          {/* Cards menores */}
-          {projects.slice(1).map((p, i) => (
-            <motion.a
-              key={p.title}
-              href={p.href}
+          {cases.map((caseItem, i) => (
+            <motion.div
+              key={caseItem.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              className="group block relative overflow-hidden"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group"
             >
-              <img
-                src={p.image}
-                alt={p.title}
-                className="w-full h-[220px] object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-5">
-                <span
-                  className="inline-block text-[10px] font-semibold uppercase tracking-wider text-white/80 px-2.5 py-1 mb-2"
-                  style={{ background: p.color }}
+              <div className="relative overflow-hidden mb-5">
+                <img
+                  src={caseItem.before}
+                  alt={caseItem.title}
+                  className="w-full h-[240px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                {/* Badge - depois */}
+                <div
+                  className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider text-white px-2.5 py-1"
+                  style={{ background: caseItem.color }}
                 >
-                  {p.category}
-                </span>
-                <h3 className="text-lg font-bold text-white">{p.title}</h3>
-                <span className="inline-flex items-center gap-1 mt-1 text-xs text-white/60 group-hover:text-white/90 transition-colors">
-                  Ver projeto
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" />
-                  </svg>
-                </span>
+                  Resultado
+                </div>
               </div>
-            </motion.a>
+
+              <div>
+                <p
+                  className="text-xs font-semibold uppercase tracking-wider mb-2"
+                  style={{ color: caseItem.color }}
+                >
+                  {caseItem.category}
+                </p>
+                <h3 className="font-display text-lg text-text-primary mb-3">
+                  {caseItem.title}
+                </h3>
+                <p className="text-sm text-text-secondary italic leading-relaxed border-l-2 border-accent/30 pl-3">
+                  &quot;{caseItem.testimonial}&quot;
+                </p>
+              </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* CTA subtle */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-text-secondary mb-5">
+            Esses números podem ser seus também.
+          </p>
+          <a
+            href="#cta"
+            className="inline-flex items-center gap-2 text-accent text-sm font-medium hover:gap-3 transition-all"
+          >
+            Vamos começar com sua foto
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="square"
+              />
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

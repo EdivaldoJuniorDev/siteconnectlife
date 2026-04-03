@@ -58,9 +58,9 @@ export default function HeroSection() {
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Gradient overlays for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
+        {/* Gradient overlays - vídeo como detalhe subtle */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
       </div>
 
       {/* ── Subtle grain texture ── */}
