@@ -3,14 +3,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
-const pillars = [
-  { value: "7 dias", label: "Entrega" },
-  { value: "+30", label: "Clínicas" },
-  { value: "100%", label: "Foco captação" },
-  { value: "Garantido", label: "Resultado" },
-];
-
-/* ── Scroll indicator ── */
 function ScrollIndicator() {
   return (
     <motion.div
@@ -33,13 +25,13 @@ function ScrollIndicator() {
   );
 }
 
-export default function HeroSection() {
+export default function HomeHeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* ── Video Background ── */}
+      {/* Video Background */}
       <div className="absolute inset-0 bg-charcoal">
         <video
           ref={videoRef}
@@ -58,65 +50,49 @@ export default function HeroSection() {
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Gradient overlays - vídeo como detalhe subtle */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
       </div>
 
-      {/* ── Subtle grain texture ── */}
       <div className="absolute inset-0 noise-bg pointer-events-none opacity-30" />
 
-      {/* ── Content ── */}
+      {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-24 pb-20">
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Headline - Pain point focused */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4.2rem] text-white leading-[1.1] tracking-tight"
           >
-            Sua clínica está cheia de pacientes{" "}
+            Tecnologia que faz{" "}
             <br className="hidden sm:block" />
-            — ou só de <span className="text-accent">seguidores?</span>
+            seu negócio <span className="text-accent">crescer.</span>
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.7,
-              delay: 0.2,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="mt-7 text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed"
           >
-            Todo mês tem paciente novo pesquisando no Google pela sua especialidade
-            em Manaus. A pergunta é:{" "}
-            <strong className="text-white font-medium">
-              ele está encontrando você ou o concorrente?
-            </strong>
+            Sites, sistemas sob medida, automações e SaaS.
+            Tudo que você precisa pra sair do operacional e escalar.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.7,
-              delay: 0.35,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="https://wa.me/5592982078515?text=Ol%C3%A1%2C%20quero%20ser%20encontrado%20primeiro"
+              href="https://wa.me/5592982078515?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20ConnectLife"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-accent text-white text-sm font-medium hover:bg-accent-light transition-all duration-200 hover:-translate-y-0.5"
             >
-              Quero ser encontrado primeiro
+              Falar no WhatsApp
               <svg
                 width="16"
                 height="16"
@@ -133,33 +109,11 @@ export default function HeroSection() {
               </svg>
             </a>
             <a
-              href="#processo"
+              href="#servicos"
               className="inline-flex items-center justify-center px-7 py-3.5 border border-white/20 text-white/80 text-sm font-medium hover:bg-white/10 transition-colors"
             >
-              Ver como funciona
+              Nossos serviços
             </a>
-          </motion.div>
-
-          {/* Pillars / Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.65 }}
-            className="mt-14 flex flex-wrap gap-12 text-sm"
-          >
-            {pillars.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.75 + i * 0.08 }}
-              >
-                <div className="text-white/90 font-medium">{item.value}</div>
-                <div className="text-white/40 uppercase tracking-wider text-[10px] mt-1">
-                  {item.label}
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>

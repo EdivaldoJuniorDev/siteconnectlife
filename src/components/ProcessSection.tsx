@@ -6,26 +6,23 @@ import { useRef } from "react";
 const steps = [
   {
     number: "01",
-    title: "Você explica, a gente escuta",
-    description: "Uma conversa. Sem formulário de 40 campos.",
+    title: "Você manda uma foto",
+    description: "Simples. Natural. Sem necessidade de estúdio ou maquiagem.",
   },
   {
     number: "02",
-    title: "Mostramos antes de construir",
-    description:
-      "Você aprova o visual antes de escrevermos uma linha de código.",
+    title: "A gente anima isso",
+    description: "Processamos, retocamos, e transformamos em algo premium.",
   },
   {
     number: "03",
-    title: "Construído para durar",
-    description:
-      "Stack moderna, rápido no celular, aparece no Google desde o primeiro dia.",
+    title: "Você aprova",
+    description: "Se não gostar, corrigimos. Seu site, suas regras.",
   },
   {
     number: "04",
-    title: "No ar. De verdade.",
-    description:
-      "Domínio, hospedagem, SSL — tudo incluso. Você não precisa entender de tecnologia para ter um site profissional.",
+    title: "Pronto. Lotando pacientes.",
+    description: "Seu site no ar, aparecendo no Google, captando agendamentos.",
   },
 ];
 
@@ -48,16 +45,16 @@ export default function ProcessSection() {
           className="text-center mb-20"
         >
           <p className="text-sm text-accent font-medium tracking-wide uppercase mb-3">
-            Processo
+            Como funciona
           </p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-text-primary">
-            Como funciona
+            Seu caminho até lotado
           </h2>
         </motion.div>
 
         {/* Desktop horizontal */}
         <div className="hidden md:block relative">
-          {/* Progress line — sits below the numbers */}
+          {/* Progress line */}
           <div className="absolute top-[110px] left-[12.5%] right-[12.5%] h-px bg-black/[0.08]">
             <motion.div
               className="h-full bg-accent origin-left"

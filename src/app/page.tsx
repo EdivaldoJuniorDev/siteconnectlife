@@ -1,8 +1,6 @@
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import HomeHeroSection from "@/components/HomeHeroSection";
 import ServicesSection from "@/components/ServicesSection";
-import ProcessSection from "@/components/ProcessSection";
-import PortfolioSection from "@/components/PortfolioSection";
 import WhySection from "@/components/WhySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -12,7 +10,7 @@ const jsonLd = {
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: "ConnectLife Tecnologia",
   description:
-    "Software House brasileira focada em Sites, Micro-SaaS, SaaS e Automações para negócios. Sites profissionais para clínicas e consultórios em Manaus.",
+    "Software House brasileira focada em Sites, Micro-SaaS, SaaS e Automações para negócios.",
   url: "https://connectlife.com.br",
   logo: "http://connectlife.com.br/wp-content/uploads/2024/09/cropped-Ativo-1.png",
   image:
@@ -53,10 +51,8 @@ export default function Home() {
       />
       <Navbar />
       <main>
-        <HeroSection />
+        <HomeHeroSection />
         <ServicesSection />
-        <ProcessSection />
-        <PortfolioSection />
         <WhySection />
         <CTASection />
       </main>

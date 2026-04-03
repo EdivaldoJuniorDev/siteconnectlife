@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 md:py-32 bg-charcoal overflow-hidden">
+    <section id="cta" className="relative py-24 md:py-32 bg-charcoal overflow-hidden">
       {/* Dots grid light */}
       <div className="absolute inset-0 dots-grid-light pointer-events-none" />
 
