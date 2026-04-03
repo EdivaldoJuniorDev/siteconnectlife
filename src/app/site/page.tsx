@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
+import HeroSection from "@/components/site/HeroSection";
+import DiferencialSection from "@/components/site/DiferencialSection";
+import DemosSection from "@/components/site/DemosSection";
+import DorSection from "@/components/site/DorSection";
+import PacotesSection from "@/components/site/PacotesSection";
+import ComoFuncionaSection from "@/components/site/ComoFuncionaSection";
+import CalculadoraSection from "@/components/site/CalculadoraSection";
+import CtaFinalSection from "@/components/site/CtaFinalSection";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import TransformationSection from "@/components/TransformationSection";
-import ProcessSection from "@/components/ProcessSection";
-import PortfolioSection from "@/components/PortfolioSection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Site para Clínicas e Consultórios em Manaus | ConnectLife",
+  title: "Site para Clínicas em Manaus com Vídeo | ConnectLife",
   description:
-    "Sites com vídeo, imagens profissionais por IA e PageSpeed 95+. Sem estúdio, sem fotógrafo. Entrega em 7 dias. Resultado garantido.",
+    "Criamos sites para clínicas e consultórios em Manaus com vídeo cinematográfico da própria médica — sem produção, sem fotógrafo. A partir de R$ 2.500. Entrega em 7 dias.",
   keywords: [
     "site para clínica Manaus",
     "site para dentista Manaus",
-    "site para consultório médico Manaus",
     "site para clínica de estética Manaus",
     "landing page para médico Manaus",
+    "site com vídeo para clínica",
   ],
   openGraph: {
-    title: "Site para Clínicas e Consultórios em Manaus | ConnectLife",
+    title: "Site para Clínicas em Manaus | ConnectLife",
     description:
-      "Sites com vídeo, imagens profissionais por IA e PageSpeed 95+. Sem estúdio, sem fotógrafo. Entrega em 7 dias.",
+      "Seu vídeo. Sua cara. No seu site. Sem estúdio, sem fotógrafo. A partir de R$ 2.500.",
     url: "https://connectlife.com.br/site",
     siteName: "ConnectLife",
     locale: "pt_BR",
@@ -31,27 +33,20 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Criação de Sites para Clínicas — ConnectLife",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  name: "ConnectLife Tecnologia",
   description:
-    "Sites profissionais com vídeo hero, imagens 4K geradas por IA e otimização para Google. Para clínicas, consultórios e profissionais de saúde em Manaus.",
-  provider: {
-    "@type": "Organization",
-    name: "ConnectLife Tecnologia",
-    url: "https://connectlife.com.br",
-    telephone: "+55-92-98207-8515",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Manaus",
-      addressRegion: "AM",
-      addressCountry: "BR",
-    },
+    "Software House especializada em sites para clínicas em Manaus",
+  url: "https://connectlife.com.br",
+  telephone: "+559292982078515",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Manaus",
+    addressRegion: "AM",
+    addressCountry: "BR",
   },
-  areaServed: {
-    "@type": "City",
-    name: "Manaus",
-  },
-  serviceType: "Criação de Sites",
+  areaServed: "Manaus, AM",
+  priceRange: "R$ 2.500 - R$ 4.900",
 };
 
 export default function SiteLandingPage() {
@@ -64,12 +59,14 @@ export default function SiteLandingPage() {
       <Navbar />
       <main>
         <HeroSection />
-        <TransformationSection />
-        <ProcessSection />
-        <PortfolioSection />
-        <CTASection />
+        <DiferencialSection />
+        <DemosSection />
+        <DorSection />
+        <PacotesSection />
+        <ComoFuncionaSection />
+        <CalculadoraSection />
+        <CtaFinalSection />
       </main>
-      <Footer />
     </>
   );
 }
