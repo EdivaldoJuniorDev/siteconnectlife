@@ -17,20 +17,20 @@ const geist = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Criação de Site para Clínicas em Manaus | ConnectLife",
+  title: "ConnectLife Tecnologia | Sites, SaaS e Automações — Manaus",
   description:
-    "Sites profissionais para clínicas, consultórios e médicos em Manaus. Entrega em 7 dias, Next.js, foco em captação de pacientes. A partir de R$1.490.",
+    "Software House em Manaus. Sites profissionais, Micro-SaaS, SaaS e Automações para negócios que querem crescer com tecnologia.",
   keywords: [
-    "criação de site para clínica Manaus",
-    "site para dentista Manaus",
-    "site para consultório médico Manaus",
-    "agência de sites Manaus",
-    "desenvolvimento de site Manaus",
+    "software house Manaus",
+    "criação de site Manaus",
+    "desenvolvimento de software Manaus",
+    "automação Manaus",
+    "SaaS Manaus",
   ],
   openGraph: {
-    title: "Criação de Site para Clínicas em Manaus | ConnectLife",
+    title: "ConnectLife Tecnologia | Sites, SaaS e Automações — Manaus",
     description:
-      "Sites profissionais para clínicas, consultórios e médicos em Manaus. Entrega em 7 dias, Next.js, foco em captação de pacientes. A partir de R$1.490.",
+      "Software House em Manaus. Sites profissionais, Micro-SaaS, SaaS e Automações para negócios.",
     url: "https://connectlife.com.br",
     siteName: "ConnectLife",
     locale: "pt_BR",
