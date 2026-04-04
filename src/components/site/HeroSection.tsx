@@ -1,32 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
 
 const WA_LINK =
   "https://wa.me/5592982078515?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20ConnectLife%20e%20quero%20saber%20mais%20sobre%20o%20site%20para%20minha%20cl%C3%ADnica";
 
 export default function HeroSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 bg-[#0F0F0E]">
         <video
-          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster="/videos/medica-consultorio-poster.jpg"
-          onLoadedData={() => setVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            videoLoaded ? "opacity-100" : "opacity-0"
-          }`}
-          style={{ objectPosition: "center center" }}
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/medica-consultorio-01.webm" type="video/webm" />
           <source src="/videos/medica-consultorio-01.mp4" type="video/mp4" />
