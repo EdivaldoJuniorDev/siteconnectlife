@@ -1,195 +1,242 @@
 "use client";
 
 import { motion } from "framer-motion";
+import BannerDemo from "@/components/demo/shared/BannerDemo";
+
+const WA =
+  "https://wa.me/5592982078515?text=Vi%20o%20demo%20Dra.%20Camila%20Rocha%20e%20quero%20um%20site%20assim%20para%20meu%20consult%C3%B3rio";
 
 const fade = {
   hidden: { opacity: 0, y: 24 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.1 },
+    transition: { duration: 0.6, delay: i * 0.12, ease: "easeOut" as const },
   }),
 };
 
-const C = {
-  primary: "#5F7A61",
-  accent: "#7B9E7C",
-  light: "#F2F5F0",
-  bg: "#F8F7F4",
-  text: "#1F2D1F",
-  muted: "#6B7B6B",
-  border: "rgba(95,122,97,0.12)",
-};
-
-/* ─── Banner ─── */
-function Banner() {
-  return (
-    <div className="w-full bg-black text-center py-2.5 px-4">
-      <span className="text-xs text-white/70">
-        Este é um site de demonstração —{" "}
-        <a href="/" className="text-[#4ADE80] underline underline-offset-2">ConnectLife Tecnologia</a>
-      </span>
-    </div>
-  );
-}
-
-/* ─── Header ─── */
-function Header() {
-  return (
-    <header className="sticky top-0 z-40 backdrop-blur-md border-b" style={{ background: `${C.bg}e6`, borderColor: C.border }}>
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="13" stroke={C.primary} strokeWidth="1.5" />
-            <path d="M14 7c-3 0-5 2.5-5 5.5 0 2 1 3.5 2.5 4.5L14 21l2.5-4c1.5-1 2.5-2.5 2.5-4.5C19 9.5 17 7 14 7Z" stroke={C.primary} strokeWidth="1.2" />
-            <circle cx="14" cy="12.5" r="1.5" fill={C.primary} />
-          </svg>
-          <div>
-            <span className="font-bold text-sm leading-none" style={{ color: C.primary }}>Dra. Camila Rocha</span>
-            <span className="block text-[10px]" style={{ color: C.muted }}>Psicóloga · CRP 20/00000-0</span>
-          </div>
-        </div>
-        <nav className="hidden md:flex items-center gap-6">
-          <a href="#sobre" className="text-xs" style={{ color: C.muted }}>Sobre</a>
-          <a href="#servicos" className="text-xs" style={{ color: C.muted }}>Serviços</a>
-          <a href="#como-funciona" className="text-xs" style={{ color: C.muted }}>Como funciona</a>
-          <a
-            href="https://wa.me/5592982078515?text=Ol%C3%A1%20Dra.%20Camila%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o"
-            target="_blank" rel="noopener noreferrer"
-            className="text-xs font-semibold text-white px-4 py-2"
-            style={{ background: C.primary }}
-          >
-            Agendar sessão
-          </a>
-        </nav>
-        <a
-          href="https://wa.me/5592982078515?text=Ol%C3%A1%20Dra.%20Camila%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o"
-          target="_blank" rel="noopener noreferrer"
-          className="md:hidden text-xs font-semibold text-white px-4 py-2"
-          style={{ background: C.primary }}
-        >
-          Agendar
-        </a>
-      </div>
-    </header>
-  );
-}
+const vp = { once: true, margin: "-60px" as const };
 
 /* ─── Hero ─── */
 function Hero() {
   return (
-    <section style={{ background: C.light }}>
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div>
+    <section className="relative h-screen min-h-[640px] pt-10 overflow-hidden">
+      {/* Background image */}
+      <img
+        src="/images/Demo 3 — Dra. Camila Rocha (ambiente consultório) 02.jpg"
+        alt="Consultório da Dra. Camila Rocha"
+        className="absolute inset-0 w-full h-full object-cover scale-[1.03]"
+      />
+      {/* Light overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F2EE]/[0.92] via-[#F5F2EE]/60 to-transparent" />
+
+      <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center">
+          {/* Left content */}
+          <div className="max-w-xl">
+            <motion.div
+              initial={{ width: 0 }} whileInView={{ width: 40 }}
+              viewport={vp} transition={{ duration: 0.6 }}
+              className="h-[2px] bg-[#7A9E6E] mb-6"
+            />
             <motion.h1
-              initial="hidden" whileInView="show" viewport={{ once: true }} custom={0} variants={fade}
-              className="text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.12]" style={{ color: C.text }}
+              initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
+              className="font-cormorant text-4xl sm:text-5xl lg:text-[58px] leading-[1.12] text-[#1E1A14]"
             >
               Um espaço seguro para você{" "}
-              <span style={{ color: C.primary }}>se encontrar.</span>
+              <span className="text-[#4A6741] italic">se encontrar.</span>
             </motion.h1>
             <motion.p
-              initial="hidden" whileInView="show" viewport={{ once: true }} custom={1} variants={fade}
-              className="mt-5 text-base md:text-lg leading-relaxed" style={{ color: C.muted }}
+              initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
+              className="mt-6 text-[#6B6358] text-base leading-[1.8] max-w-[440px]"
             >
               Psicoterapia individual para adultos que buscam autoconhecimento,
               equilíbrio emocional e qualidade de vida. Atendimento presencial em
               Manaus e online para todo o Brasil.
             </motion.p>
             <motion.div
-              initial="hidden" whileInView="show" viewport={{ once: true }} custom={2} variants={fade}
+              initial="hidden" whileInView="show" viewport={vp} custom={2} variants={fade}
               className="mt-8 flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="https://wa.me/5592982078515?text=Ol%C3%A1%20Dra.%20Camila%2C%20gostaria%20de%20agendar%20minha%20primeira%20sess%C3%A3o"
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white text-sm font-semibold"
-                style={{ background: C.primary }}
+                href={WA} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#4A6741] text-white text-sm font-semibold tracking-wide transition-opacity hover:opacity-90"
               >
                 Agendar primeira sessão
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" /></svg>
+                <span className="text-base">&#8594;</span>
               </a>
-              <a href="#como-funciona"
-                className="inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold border"
-                style={{ color: C.primary, borderColor: C.primary }}
+              <a
+                href="#como-funciona"
+                className="inline-flex items-center justify-center px-7 py-3.5 border border-[#6B6358] text-[#6B6358] text-sm font-semibold tracking-wide transition-colors hover:bg-[#6B6358]/5"
               >
-                Saiba como funciona
+                Saiba como funciona &#8595;
               </a>
             </motion.div>
             <motion.p
-              initial="hidden" whileInView="show" viewport={{ once: true }} custom={3} variants={fade}
-              className="mt-3 text-xs" style={{ color: C.muted }}
+              initial="hidden" whileInView="show" viewport={vp} custom={3} variants={fade}
+              className="mt-4 text-[#6B6358] text-xs"
             >
               Primeira sessão de acolhimento sem compromisso.
             </motion.p>
           </div>
+
+          {/* Right decorative quote */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+            viewport={vp} transition={{ duration: 1, delay: 0.4 }}
+            className="hidden lg:flex flex-col items-end justify-center pr-8"
           >
-            <img
-              src="/images/Demo 3 — Dra. Camila Rocha (hero principal) 02.jpg"
-              alt="Dra. Camila Rocha — Psicóloga em Manaus"
-              className="w-full h-[320px] md:h-[440px] object-cover"
-            />
+            <span className="font-cormorant text-[180px] leading-none text-[#C8DBBB]/40 select-none">
+              &ldquo;
+            </span>
+            <p className="text-[#6B6358]/60 text-sm italic max-w-[240px] text-right -mt-12 leading-relaxed">
+              A escuta genuína é o primeiro passo para a transformação.
+            </p>
           </motion.div>
         </div>
       </div>
     </section>
+  );
+}
+
+/* ─── Nav (editorial) ─── */
+function Nav() {
+  const links = [
+    { label: "Início", href: "#" },
+    { label: "Sobre", href: "#sobre" },
+    { label: "Psicoterapia", href: "#psicoterapia" },
+    { label: "Como funciona", href: "#como-funciona" },
+    { label: "Contato", href: "#contato" },
+  ];
+
+  return (
+    <nav className="sticky top-10 z-40 bg-[#F5F2EE] border-b border-black/[0.06]">
+      <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div>
+          <span className="font-cormorant text-[16px] font-semibold text-[#1E1A14]">
+            Dra. Camila Rocha
+          </span>
+          <span className="block text-[11px] text-[#6B6358] -mt-0.5">
+            Psicóloga &middot; CRP 20/00000-0
+          </span>
+        </div>
+        <div className="hidden md:flex items-center gap-7">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              className="text-xs text-[#6B6358] hover:text-[#1E1A14] transition-colors"
+            >
+              {l.label}
+            </a>
+          ))}
+          <a
+            href={WA} target="_blank" rel="noopener noreferrer"
+            className="text-xs font-semibold text-[#4A6741] border border-[#4A6741] px-4 py-2 transition-colors hover:bg-[#4A6741] hover:text-white"
+          >
+            Agendar sessão
+          </a>
+        </div>
+        <a
+          href={WA} target="_blank" rel="noopener noreferrer"
+          className="md:hidden text-xs font-semibold text-[#4A6741] border border-[#4A6741] px-4 py-2"
+        >
+          Agendar
+        </a>
+      </div>
+    </nav>
   );
 }
 
 /* ─── Sobre ─── */
 function Sobre() {
+  const formations = [
+    "Psicologia — UFAM",
+    "Especialização TCC — SP",
+    "Mindfulness — UNIFESP",
+  ];
+
   return (
-    <section id="sobre" className="py-20 md:py-28" style={{ background: C.bg }}>
+    <section id="sobre" className="bg-[#EDE8E0] py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Photo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }} transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={vp} transition={{ duration: 0.7 }}
+            className="relative flex"
           >
-            <img
-              src="/images/Demo 3 — Dra. Camila Rocha (ambiente consultório) 02.jpg"
-              alt="Consultório da Dra. Camila Rocha"
-              className="w-full h-[320px] md:h-[420px] object-cover"
-            />
+            {/* Decorative bar */}
+            <div className="hidden sm:block w-2 bg-[#C8DBBB] self-stretch max-h-[60%] my-auto mr-5 flex-shrink-0" />
+            <div className="relative w-full">
+              <img
+                src="/images/Demo 3 — Dra. Camila Rocha (hero principal) .png"
+                alt="Dra. Camila Rocha — Psicóloga"
+                className="w-full aspect-[3/4] object-cover"
+              />
+              {/* Credential pill */}
+              <span className="absolute bottom-5 left-5 bg-[#F5F2EE] text-[#4A6741] text-xs font-medium px-3 py-1.5">
+                CRP 20/00000-0
+              </span>
+            </div>
           </motion.div>
+
+          {/* Text */}
           <div>
+            <motion.div
+              initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
+              className="flex items-center gap-3 mb-6"
+            >
+              <span className="text-xs tracking-[0.2em] text-[#6B6358] font-medium uppercase">
+                Sobre
+              </span>
+              <div className="w-8 h-px bg-[#7A9E6E]" />
+            </motion.div>
+
             <motion.h2
-              initial="hidden" whileInView="show" viewport={{ once: true }} custom={0} variants={fade}
-              className="text-3xl md:text-4xl font-bold" style={{ color: C.text }}
+              initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
+              className="font-cormorant italic text-3xl sm:text-4xl lg:text-[42px] text-[#1E1A14] leading-[1.15]"
             >
               Olá, sou a Camila.
             </motion.h2>
+
             <motion.div
-              initial="hidden" whileInView="show" viewport={{ once: true }} custom={1} variants={fade}
-              className="mt-5 space-y-4 text-sm md:text-base leading-relaxed" style={{ color: C.muted }}
+              initial="hidden" whileInView="show" viewport={vp} custom={2} variants={fade}
+              className="mt-8 space-y-6 text-[#6B6358] text-[15px] leading-[1.9]"
             >
               <p>
-                Sou psicóloga formada pela Universidade Federal do Amazonas com
-                especialização em Terapia Cognitivo-Comportamental (TCC) pelo
-                Instituto de Psicologia Aplicada de São Paulo.
+                Sou psicóloga formada pela Universidade Federal do Amazonas, com
+                especialização em Terapia Cognitivo-Comportamental pelo Instituto de
+                Psicologia Aplicada de São Paulo. Ao longo dos anos, fui moldada tanto
+                pela teoria quanto pela coragem dos pacientes que confiaram em mim suas
+                histórias.
               </p>
               <p>
-                Atendo adultos que estão passando por ansiedade, depressão, crises
-                de vida, dificuldades nos relacionamentos ou simplesmente querem se
-                conhecer melhor.
+                Atendo adultos que estão passando por ansiedade, depressão, crises de
+                vida, dificuldades nos relacionamentos ou simplesmente querem se conhecer
+                melhor. Não tenho pressa. Acredito que o processo terapêutico tem o ritmo
+                de cada pessoa — e que forçar esse tempo é desrespeitá-lo.
               </p>
               <p>
-                Acredito que cada pessoa carrega em si os recursos para sua
-                transformação. Meu papel é caminhar ao seu lado nesse processo com
-                escuta genuína, sem julgamentos.
+                O meu papel não é ter respostas prontas. É caminhar ao seu lado, com
+                escuta genuína e sem julgamentos, até que você consiga enxergar em si
+                os recursos que sempre estiveram aí. A terapia, no fundo, é um reencontro
+                com quem você realmente é.
               </p>
             </motion.div>
+
+            {/* Formations */}
             <motion.div
-              initial="hidden" whileInView="show" viewport={{ once: true }} custom={2} variants={fade}
-              className="mt-6 flex flex-wrap gap-3"
+              initial="hidden" whileInView="show" viewport={vp} custom={3} variants={fade}
+              className="mt-10"
             >
-              <span className="text-xs px-3 py-1.5 border" style={{ borderColor: C.border, color: C.primary }}>CRP 20/00000-0</span>
-              <span className="text-xs px-3 py-1.5 border" style={{ borderColor: C.border, color: C.primary }}>UFAM</span>
-              <span className="text-xs px-3 py-1.5 border" style={{ borderColor: C.border, color: C.primary }}>Especialização TCC — IPA/SP</span>
+              {formations.map((f, i) => (
+                <div key={f}>
+                  {i === 0 && <div className="h-px bg-[#C8DBBB] mb-4" />}
+                  <p className="text-sm text-[#1E1A14] py-3">{f}</p>
+                  <div className="h-px bg-[#C8DBBB]" />
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>
@@ -198,52 +245,64 @@ function Sobre() {
   );
 }
 
-/* ─── Serviços ─── */
-function Servicos() {
+/* ─── Abordagem Terapêutica ─── */
+function Abordagem() {
   const cards = [
     {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke={C.primary} strokeWidth="1.4">
-          <circle cx="16" cy="12" r="6" /><path d="M10 24c0-3 2.7-5 6-5s6 2 6 5" />
-        </svg>
-      ),
-      title: "Psicoterapia individual",
-      desc: "Sessões semanais de 50 minutos com abordagem cognitivo-comportamental. Foco em resultados práticos para sua vida cotidiana.",
+      num: "1",
+      title: "Terapia Cognitivo-Comportamental",
+      desc: "Abordagem baseada em evidências que ajuda a identificar e transformar padrões de pensamento que geram sofrimento. Trabalhamos juntos em estratégias práticas para o dia a dia.",
     },
     {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke={C.primary} strokeWidth="1.4">
-          <rect x="6" y="8" width="20" height="14" /><path d="M6 12h20" /><circle cx="16" cy="19" r="2" />
-        </svg>
-      ),
-      title: "Atendimento online",
-      desc: "Mesma qualidade do presencial, de onde você estiver. Plataforma segura, sigilo garantido, para todo o Brasil.",
+      num: "2",
+      title: "Mindfulness e Atenção Plena",
+      desc: "Técnicas de presença e consciência corporal que reduzem a ansiedade e ampliam a conexão consigo. Um convite para habitar o momento presente com gentileza.",
     },
     {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke={C.primary} strokeWidth="1.4">
-          <path d="M16 6C10 6 6 10.5 6 15s4 7.5 10 11c6-3.5 10-6.5 10-11S22 6 16 6Z" />
-        </svg>
-      ),
-      title: "Avaliação psicológica",
-      desc: "Processo estruturado de avaliação para diagnóstico, orientação profissional ou laudos específicos.",
+      num: "3",
+      title: "Psicoeducação",
+      desc: "Compreender o que acontece com você é parte fundamental da cura. Compartilho conhecimento sobre processos emocionais para que você se torne protagonista da sua saúde mental.",
     },
   ];
 
   return (
-    <section id="servicos" className="py-20 md:py-28" style={{ background: C.light }}>
+    <section id="psicoterapia" className="bg-[#F5F2EE] py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} custom={0} variants={fade} className="text-center mb-14">
-          <p className="text-sm font-semibold tracking-wide uppercase mb-2" style={{ color: C.primary }}>Serviços</p>
-          <h2 className="text-3xl md:text-4xl font-bold" style={{ color: C.text }}>Como posso te ajudar</h2>
+        <motion.div
+          initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
+          className="flex items-center gap-3 mb-6"
+        >
+          <span className="text-xs tracking-[0.2em] text-[#6B6358] font-medium uppercase">
+            Como trabalho
+          </span>
+          <div className="w-8 h-px bg-[#7A9E6E]" />
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <motion.h2
+          initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
+          className="font-cormorant text-3xl sm:text-4xl lg:text-[42px] text-[#1E1A14] leading-[1.15] max-w-2xl"
+        >
+          Cada processo terapêutico é único como você.
+        </motion.h2>
+
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10">
           {cards.map((c, i) => (
-            <motion.div key={c.title} initial="hidden" whileInView="show" viewport={{ once: true }} custom={i} variants={fade}
-              className="group p-8 border bg-white transition-all hover:-translate-y-1" style={{ borderColor: C.border }}>
-              <div className="mb-5">{c.icon}</div>
-              <h3 className="text-lg font-bold mb-2" style={{ color: C.text }}>{c.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: C.muted }}>{c.desc}</p>
+            <motion.div
+              key={c.num}
+              initial="hidden" whileInView="show" viewport={vp} custom={i + 2} variants={fade}
+              className="pt-8"
+            >
+              <div className="border-t border-[#C8DBBB] pt-6">
+                <span className="font-cormorant text-[48px] leading-none text-[#C8DBBB] block mb-4">
+                  {c.num}
+                </span>
+                <h3 className="text-[17px] font-semibold text-[#1E1A14] mb-3">
+                  {c.title}
+                </h3>
+                <p className="text-sm text-[#6B6358] leading-[1.8]">
+                  {c.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -252,29 +311,88 @@ function Servicos() {
   );
 }
 
-/* ─── Como funciona ─── */
+/* ─── Como Funciona ─── */
 function ComoFunciona() {
   const steps = [
-    { num: "01", title: "Primeiro contato", desc: "Me chame no WhatsApp. Vamos conversar por 15 minutos sem compromisso para entender o que você está buscando." },
-    { num: "02", title: "Sessão de acolhimento", desc: "Nosso primeiro encontro. Você me conta sua história, eu te apresento como trabalhamos. Juntos decidimos se faz sentido continuar." },
-    { num: "03", title: "Início do processo", desc: "Sessões semanais, mesmo horário, mesmo espaço seguro. Construímos seu processo terapêutico no seu ritmo." },
-    { num: "04", title: "Transformação real", desc: "Com o tempo, você percebe mudanças concretas — nos pensamentos, nas relações, na forma de encarar a vida." },
+    {
+      num: "01",
+      title: "Primeiro contato",
+      pill: "15 min",
+      desc: "Me chame no WhatsApp. Vamos conversar por 15 minutos, sem compromisso, para entender o que você está buscando e se faz sentido seguirmos juntos.",
+    },
+    {
+      num: "02",
+      title: "Sessão de acolhimento",
+      pill: "50 min",
+      desc: "Nosso primeiro encontro. Você me conta sua história no seu ritmo. Eu te apresento como trabalho. Juntos, decidimos se faz sentido continuar.",
+    },
+    {
+      num: "03",
+      title: "Início do processo",
+      pill: "Semanal",
+      desc: "Sessões semanais, mesmo horário, mesmo espaço seguro. Construímos seu processo terapêutico respeitando o seu tempo e as suas necessidades.",
+    },
+    {
+      num: "04",
+      title: "Transformação percebida",
+      pill: "Contínuo",
+      desc: "Com o tempo, você percebe mudanças concretas — nos pensamentos, nas relações, na forma de encarar a vida. A terapia se torna parte de quem você é.",
+    },
   ];
+
   return (
-    <section id="como-funciona" className="py-20 md:py-28" style={{ background: C.bg }}>
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.h2 initial="hidden" whileInView="show" viewport={{ once: true }} custom={0} variants={fade}
-          className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: C.text }}>
-          Como funciona
+    <section id="como-funciona" className="bg-[#2C2416] py-24 md:py-32">
+      <div className="max-w-3xl mx-auto px-6">
+        <motion.div
+          initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
+          className="flex items-center gap-3 mb-6"
+        >
+          <span className="text-xs tracking-[0.2em] text-[#C8DBBB] font-medium uppercase">
+            O processo
+          </span>
+          <div className="w-8 h-px bg-[#7A9E6E]" />
+        </motion.div>
+
+        <motion.h2
+          initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
+          className="font-cormorant text-3xl sm:text-4xl lg:text-[42px] text-white leading-[1.15] mb-16"
+        >
+          Do primeiro contato à transformação real.
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((s, i) => (
-            <motion.div key={s.num} initial="hidden" whileInView="show" viewport={{ once: true }} custom={i} variants={fade}>
-              <span className="text-4xl font-bold" style={{ color: C.accent }}>{s.num}</span>
-              <h3 className="mt-3 text-lg font-bold" style={{ color: C.text }}>{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed" style={{ color: C.muted }}>{s.desc}</p>
-            </motion.div>
-          ))}
+
+        <div className="relative">
+          {/* Dashed connecting line */}
+          <div className="absolute left-[27px] top-8 bottom-8 w-px border-l border-dashed border-[#7A9E6E]/40" />
+
+          <div className="space-y-12">
+            {steps.map((s, i) => (
+              <motion.div
+                key={s.num}
+                initial="hidden" whileInView="show" viewport={vp} custom={i + 2} variants={fade}
+                className="relative flex gap-8"
+              >
+                {/* Number */}
+                <span className="font-cormorant text-[56px] leading-none text-[#7A9E6E]/40 flex-shrink-0 w-14 text-center relative z-10">
+                  {s.num}
+                </span>
+
+                {/* Content */}
+                <div className="pt-2 pb-2">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-white text-[16px] font-bold">
+                      {s.title}
+                    </h3>
+                    <span className="bg-[#C8DBBB]/20 text-[#C8DBBB] text-xs px-2 py-0.5">
+                      {s.pill}
+                    </span>
+                  </div>
+                  <p className="text-white/60 text-[14px] leading-[1.7]">
+                    {s.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -284,97 +402,158 @@ function ComoFunciona() {
 /* ─── Depoimentos ─── */
 function Depoimentos() {
   const deps = [
-    { iniciais: "M.F., 29 anos", texto: "Cheguei na terapia sem acreditar muito que ia funcionar. Depois de 6 meses com a Dra. Camila entendo coisas de mim que nunca tinha parado para olhar. Mudou minha vida de verdade." },
-    { iniciais: "T.S., 41 anos", texto: "O que me surpreendeu foi a leveza do processo. Eu esperava algo pesado e foi o contrário. A Camila tem uma escuta incrível e me fez sentir seguro desde a primeira sessão." },
+    {
+      texto:
+        "Cheguei na terapia sem acreditar muito que ia funcionar. Depois de 6 meses com a Dra. Camila entendo coisas de mim que nunca tinha parado para olhar. Mudou minha vida de verdade.",
+      autor: "M.F. · 29 anos",
+    },
+    {
+      texto:
+        "O que me surpreendeu foi a leveza do processo. Eu esperava algo pesado e foi o contrário. A Camila tem uma escuta incrível e me fez sentir seguro desde a primeira sessão.",
+      autor: "T.S. · 41 anos",
+    },
   ];
+
   return (
-    <section className="py-20 md:py-28" style={{ background: C.light }}>
+    <section className="bg-[#F5F2EE] py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.h2 initial="hidden" whileInView="show" viewport={{ once: true }} custom={0} variants={fade}
-          className="text-3xl md:text-4xl font-bold text-center mb-14" style={{ color: C.text }}>
-          Quem já passou por aqui
+        <motion.div
+          initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
+          className="flex items-center gap-3 mb-6"
+        >
+          <span className="text-xs tracking-[0.2em] text-[#6B6358] font-medium uppercase">
+            Depoimentos
+          </span>
+          <div className="w-8 h-px bg-[#7A9E6E]" />
+        </motion.div>
+
+        <motion.h2
+          initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
+          className="font-cormorant text-3xl sm:text-4xl lg:text-[42px] text-[#1E1A14] leading-[1.15] mb-4"
+        >
+          Quem já passou por aqui.
         </motion.h2>
+
+        <motion.p
+          initial="hidden" whileInView="show" viewport={vp} custom={2} variants={fade}
+          className="text-[#6B6358] text-[11px] italic mb-14"
+        >
+          Identidades preservadas conforme Código de Ética do CFP.
+        </motion.p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {deps.map((d, i) => (
-            <motion.div key={d.iniciais} initial="hidden" whileInView="show" viewport={{ once: true }} custom={i} variants={fade}
-              className="p-8 border bg-white" style={{ borderColor: C.border }}>
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, j) => (
-                  <svg key={j} width="16" height="16" viewBox="0 0 16 16" fill={C.primary}>
-                    <path d="M8 1l2.2 4.5L15 6.3l-3.5 3.4.8 4.8L8 12.2 3.7 14.5l.8-4.8L1 6.3l4.8-.8L8 1Z" />
-                  </svg>
-                ))}
+            <motion.div
+              key={d.autor}
+              initial="hidden" whileInView="show" viewport={vp} custom={i + 3} variants={fade}
+              className="bg-[#EDE8E0] border-l-[3px] border-[#7A9E6E] p-8"
+            >
+              <span className="font-cormorant text-[60px] leading-none text-[#C8DBBB] block -mb-4">
+                &ldquo;
+              </span>
+              <p className="text-[15px] text-[#1E1A14] leading-[1.8] mt-2">
+                {d.texto}
+              </p>
+              <div className="mt-6">
+                <div className="w-8 h-px bg-[#C8DBBB] mb-3" />
+                <p className="text-sm text-[#6B6358] font-medium">{d.autor}</p>
               </div>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: C.muted }}>&ldquo;{d.texto}&rdquo;</p>
-              <p className="text-sm font-bold" style={{ color: C.text }}>{d.iniciais}</p>
             </motion.div>
           ))}
         </div>
-        <motion.p initial="hidden" whileInView="show" viewport={{ once: true }} custom={2} variants={fade}
-          className="mt-6 text-center text-xs italic" style={{ color: C.muted }}>
-          Depoimentos com identidade preservada a pedido dos pacientes, em conformidade com o Código de Ética do CFP.
-        </motion.p>
       </div>
     </section>
   );
 }
 
-/* ─── CTA Final ─── */
+/* ─── CTA Final + Footer ─── */
 function CTAFinal() {
   return (
-    <section className="py-20 md:py-28 text-white text-center" style={{ background: C.primary }}>
-      <div className="max-w-3xl mx-auto px-6">
-        <motion.h2 initial="hidden" whileInView="show" viewport={{ once: true }} custom={0} variants={fade} className="text-3xl md:text-4xl font-bold">
+    <section id="contato" className="relative bg-[#EDE8E0] py-24 md:py-32 overflow-hidden">
+      {/* Grain texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
+        }}
+      />
+
+      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ width: 0 }} whileInView={{ width: 40 }}
+          viewport={vp} transition={{ duration: 0.6 }}
+          className="h-[2px] bg-[#7A9E6E] mx-auto mb-8"
+        />
+
+        <motion.h2
+          initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
+          className="font-cormorant text-3xl sm:text-4xl lg:text-[42px] text-[#1E1A14] leading-[1.15]"
+        >
           Dar o primeiro passo é a parte mais difícil.
         </motion.h2>
-        <motion.p initial="hidden" whileInView="show" viewport={{ once: true }} custom={1} variants={fade} className="mt-4 text-base text-white/60">
+
+        <motion.p
+          initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
+          className="mt-5 text-[#6B6358] text-base leading-[1.7]"
+        >
           O resto a gente faz juntos. Me chame no WhatsApp e vamos conversar sem compromisso.
         </motion.p>
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} custom={2} variants={fade}>
+
+        <motion.div
+          initial="hidden" whileInView="show" viewport={vp} custom={2} variants={fade}
+        >
           <a
-            href="https://wa.me/5592982078515?text=Ol%C3%A1%20Dra.%20Camila%2C%20gostaria%20de%20agendar%20minha%20primeira%20sess%C3%A3o"
-            target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 mt-8 px-8 py-4 bg-white font-semibold text-base"
-            style={{ color: C.primary }}
+            href={WA} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 mt-8 px-8 py-4 bg-[#4A6741] text-white text-sm font-semibold tracking-wide transition-opacity hover:opacity-90"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill={C.primary}>
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
             Quero agendar minha primeira sessão
+            <span className="text-base">&#8594;</span>
           </a>
         </motion.div>
-        <motion.p initial="hidden" whileInView="show" viewport={{ once: true }} custom={3} variants={fade} className="mt-4 text-xs text-white/40">
-          Atendimento presencial em Manaus · Online para todo o Brasil
+
+        <motion.p
+          initial="hidden" whileInView="show" viewport={vp} custom={3} variants={fade}
+          className="mt-4 text-[#6B6358] text-xs"
+        >
+          Atendimento presencial em Manaus &middot; Online para todo o Brasil
         </motion.p>
       </div>
     </section>
   );
 }
 
-/* ─── Footer ─── */
 function Footer() {
   return (
-    <footer className="py-10 border-t" style={{ borderColor: C.border, background: C.bg }}>
-      <div className="max-w-6xl mx-auto px-6 text-center space-y-1">
-        <p className="font-bold" style={{ color: C.text }}>Dra. Camila Rocha — Psicóloga</p>
-        <p className="text-xs" style={{ color: C.muted }}>CRP 20/00000-0</p>
-        <p className="text-xs" style={{ color: C.muted }}>Rua Leonardo Malcher, 726 — Centro, Manaus - AM</p>
-        <p className="text-xs" style={{ color: C.muted }}>contato@dracamilarocha.com.br · (92) 9 8888-0003</p>
-        <p className="text-xs" style={{ color: C.muted }}>Atendimento: Seg a Sex, 8h às 19h · Sáb, 8h às 13h</p>
-        <p className="text-xs pt-3" style={{ color: C.muted }}>© 2025 Dra. Camila Rocha. Todos os direitos reservados.</p>
+    <footer className="bg-[#EDE8E0] border-t border-black/[0.06] py-10">
+      <div className="max-w-6xl mx-auto px-6 text-center space-y-1.5">
+        <p className="font-cormorant text-lg text-[#1E1A14]">
+          Dra. Camila Rocha &mdash; Psicóloga
+        </p>
+        <p className="text-xs text-[#6B6358]">CRP 20/00000-0</p>
+        <p className="text-xs text-[#6B6358]">
+          Rua Leonardo Malcher, 726 &mdash; Centro, Manaus &ndash; AM
+        </p>
+        <p className="text-xs text-[#6B6358]">
+          contato@dracamilarocha.com.br &middot; (92) 9 8888-0003
+        </p>
+        <p className="text-xs text-[#6B6358] pt-4">
+          &copy; 2025 Dra. Camila Rocha. Todos os direitos reservados.
+        </p>
       </div>
     </footer>
   );
 }
 
+/* ─── Main ─── */
 export default function PsicologiaDemo() {
   return (
-    <div style={{ fontFamily: "var(--font-sans), system-ui, sans-serif", background: C.bg }}>
-      <Banner />
-      <Header />
+    <div className="font-sans bg-[#F5F2EE] text-[#1E1A14]">
+      <BannerDemo />
       <Hero />
+      <Nav />
       <Sobre />
-      <Servicos />
+      <Abordagem />
       <ComoFunciona />
       <Depoimentos />
       <CTAFinal />

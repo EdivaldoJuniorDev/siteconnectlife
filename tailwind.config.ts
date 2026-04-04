@@ -51,6 +51,7 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-display)", "serif"],
         playfair: ["var(--font-playfair)", "serif"],
+        cormorant: ["var(--font-cormorant)", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       borderRadius: {
