@@ -17,7 +17,7 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           poster="/videos/medica-consultorio-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
+          className="absolute inset-0 w-full h-full object-cover scale-[1.03]"
         >
           <source src="/videos/medica-consultorio-01.webm" type="video/webm" />
           <source src="/videos/medica-consultorio-01.mp4" type="video/mp4" />

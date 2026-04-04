@@ -72,7 +72,7 @@ function BrowserMockup() {
           loop
           playsInline
           preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-[1.03]"
         >
           <source src="/videos/medica-consultorio-01.webm" type="video/webm" />
           <source src="/videos/medica-consultorio-01.mp4" type="video/mp4" />
@@ -152,7 +152,7 @@ function BeforeAfterHero() {
           loop
           playsInline
           preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-[1.03]"
         >
           <source src="/videos/medica-consultorio-01.webm" type="video/webm" />
           <source src="/videos/medica-consultorio-01.mp4" type="video/mp4" />
@@ -181,7 +181,7 @@ function BeforeAfterHero() {
         <img
           src="/images/antes-foto01.jpg"
           alt="Foto comum de celular"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-[1.03]"
           draggable={false}
         />
       </div>
