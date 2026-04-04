@@ -11,7 +11,7 @@ export default function HeroSection() {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <section className="relative h-screen flex items-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 bg-[#0F0F0E]">
         <video
@@ -26,19 +26,20 @@ export default function HeroSection() {
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             videoLoaded ? "opacity-100" : "opacity-0"
           }`}
+          style={{ objectPosition: "center center" }}
         >
           <source src="/videos/medica-consultorio-01.webm" type="video/webm" />
           <source src="/videos/medica-consultorio-01.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
       </div>
 
       <div className="absolute inset-0 noise-bg pointer-events-none opacity-30" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-8 pb-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-24 pb-20">
         <div className="max-w-2xl lg:max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

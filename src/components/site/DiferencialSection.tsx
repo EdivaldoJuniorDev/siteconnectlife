@@ -65,7 +65,7 @@ function BrowserMockup() {
       </div>
 
       {/* Hero section inside */}
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-[16/9] overflow-hidden">
         <video
           autoPlay
           muted
@@ -111,14 +111,15 @@ function BeforeAfterHero() {
     if (!container) return;
     const rect = container.getBoundingClientRect();
     const x = clientX - rect.left;
-    setPosition(Math.max(5, Math.min(95, (x / rect.width) * 100)));
+    setPosition(Math.max(0, Math.min(100, (x / rect.width) * 100)));
   }, []);
 
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
+      e.preventDefault();
       setIsDragging(true);
       updatePosition(e.clientX);
-      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      containerRef.current?.setPointerCapture(e.pointerId);
     },
     [updatePosition]
   );
@@ -136,11 +137,12 @@ function BeforeAfterHero() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full aspect-[16/10] select-none cursor-ew-resize overflow-hidden border border-black/[0.08]"
+      className="relative w-full aspect-[16/9] select-none cursor-ew-resize overflow-hidden border border-black/[0.08]"
+      style={{ touchAction: "none" }}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerUp}
+      onPointerCancel={handlePointerUp}
     >
       {/* DEPOIS: vídeo hero com overlay e copy (full background) */}
       <div className="absolute inset-0">
