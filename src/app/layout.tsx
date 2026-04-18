@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import CookieConsent from "@/components/consent/CookieConsent";
+import ConsentBootstrap from "@/components/consent/ConsentBootstrap";
+import GoogleTagManager, {
+  GoogleTagManagerNoScript,
+} from "@/components/analytics/GoogleTagManager";
 
 const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
@@ -70,7 +75,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className="font-sans antialiased">
+        <ConsentBootstrap />
+        <GoogleTagManager />
+        <GoogleTagManagerNoScript />
         {children}
+        <CookieConsent />
       </body>
     </html>
   );
