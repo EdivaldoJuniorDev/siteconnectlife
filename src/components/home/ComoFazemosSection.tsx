@@ -72,7 +72,7 @@ export default function ComoFazemosSection() {
             {STEPS.map((step, i) => (
               <FadeUp key={step.num} delay={i * 0.08}>
                 <li className="relative flex items-start gap-6">
-                  <span className="font-playfair text-5xl md:text-6xl text-transparent [-webkit-text-stroke:1px_#1D9E75] [text-stroke:1px_#1D9E75] opacity-80 leading-none shrink-0">
+                  <span className="font-playfair text-5xl md:text-6xl text-transparent [-webkit-text-stroke:1px_#A84215] [text-stroke:1px_#A84215] opacity-80 leading-none shrink-0">
                     {step.num}
                   </span>
                   <div>
