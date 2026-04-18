@@ -35,6 +35,12 @@ export default function Footer() {
               Portfólio
             </a>
             <Link
+              href="/blog"
+              className="hover:text-text-primary transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
               href="/contato"
               className="hover:text-text-primary transition-colors"
             >
