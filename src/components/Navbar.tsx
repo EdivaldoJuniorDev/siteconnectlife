@@ -66,6 +66,16 @@ export default function Navbar() {
             Portfólio
           </a>
           <a
+            href="/blog"
+            className={`text-sm transition-colors ${
+              scrolled
+                ? "text-text-secondary hover:text-text-primary"
+                : "text-white/60 hover:text-white"
+            }`}
+          >
+            Blog
+          </a>
+          <a
             href="/contato"
             className={`text-sm transition-colors ${
               scrolled
