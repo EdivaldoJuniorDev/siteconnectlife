@@ -17,11 +17,16 @@ describe("Navbar", () => {
     expect(
       screen.getByRole("link", { name: /portfólio/i }),
     ).toBeInTheDocument();
+    const contato = screen.getByRole("link", { name: /^contato$/i });
+    expect(contato).toHaveAttribute("href", "/contato");
   });
 
-  it("aponta o CTA de WhatsApp para o número correto", () => {
+  it("aponta os CTAs de WhatsApp para o número correto", () => {
     render(<Navbar />);
-    const ctas = screen.getAllByRole("link", { name: /falar conosco|contato/i });
+    const ctas = screen.getAllByRole("link", {
+      name: /falar conosco|whatsapp/i,
+    });
+    expect(ctas.length).toBeGreaterThan(0);
     ctas.forEach((cta) => {
       expect(cta).toHaveAttribute("href", "https://wa.me/5592982078515");
       expect(cta).toHaveAttribute("target", "_blank");

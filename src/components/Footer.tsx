@@ -34,6 +34,12 @@ export default function Footer() {
             >
               Portfólio
             </a>
+            <Link
+              href="/contato"
+              className="hover:text-text-primary transition-colors"
+            >
+              Contato
+            </Link>
             <a
               href="https://wa.me/5592982078515"
               target="_blank"
