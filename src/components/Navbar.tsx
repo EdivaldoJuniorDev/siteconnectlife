@@ -66,6 +66,16 @@ export default function Navbar() {
             Portfólio
           </a>
           <a
+            href="/contato"
+            className={`text-sm transition-colors ${
+              scrolled
+                ? "text-text-secondary hover:text-text-primary"
+                : "text-white/60 hover:text-white"
+            }`}
+          >
+            Contato
+          </a>
+          <a
             href="https://wa.me/5592982078515"
             target="_blank"
             rel="noopener noreferrer"
@@ -81,7 +91,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           className="md:hidden text-sm bg-accent text-white px-4 py-2 hover:bg-accent-dark transition-colors"
         >
-          Contato
+          WhatsApp
         </a>
       </div>
     </motion.nav>
