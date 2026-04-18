@@ -1,21 +1,28 @@
 import Navbar from "@/components/Navbar";
 import HomeHeroSection from "@/components/HomeHeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import WhySection from "@/components/WhySection";
-import CTASection from "@/components/CTASection";
+import LogosSection from "@/components/home/LogosSection";
+import ServicosSection from "@/components/home/ServicosSection";
+import ComoFazemosSection from "@/components/home/ComoFazemosSection";
+import NumerosSection from "@/components/home/NumerosSection";
+import StackSection from "@/components/home/StackSection";
+import CasosSection from "@/components/home/CasosSection";
+import ParaQuemSection from "@/components/home/ParaQuemSection";
+import DepoimentosSection from "@/components/home/DepoimentosSection";
+import FaqSection, { FAQ_ITEMS } from "@/components/home/FaqSection";
+import CtaFinalSection from "@/components/home/CtaFinalSection";
 import Footer from "@/components/Footer";
 
-const jsonLd = {
+const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: "ConnectLife Tecnologia",
   description:
     "Software House brasileira focada em Sites, Micro-SaaS, SaaS e Automações para negócios.",
   url: "https://connectlife.com.br",
-  logo: "http://connectlife.com.br/wp-content/uploads/2024/09/cropped-Ativo-1.png",
-  image:
-    "http://connectlife.com.br/wp-content/uploads/2024/09/cropped-Ativo-1.png",
+  logo: "https://connectlife.com.br/logo.webp",
+  image: "https://connectlife.com.br/logo.webp",
   telephone: "+55-92-98207-8515",
+  email: "contato@connectlife.com.br",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Manaus",
@@ -27,19 +34,33 @@ const jsonLd = {
     latitude: -3.119,
     longitude: -60.0217,
   },
-  areaServed: {
-    "@type": "City",
-    name: "Manaus",
-  },
+  areaServed: [
+    { "@type": "City", name: "Manaus" },
+    { "@type": "Country", name: "Brasil" },
+  ],
   priceRange: "$$",
   openingHours: "Mo-Fr 08:00-18:00",
-  sameAs: [],
   serviceType: [
     "Criação de Sites",
     "Desenvolvimento de Software",
     "Automações",
     "SaaS",
+    "Micro-SaaS",
   ],
+  sameAs: [],
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
 };
 
 export default function Home() {
@@ -47,14 +68,25 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar />
       <main>
         <HomeHeroSection />
-        <ServicesSection />
-        <WhySection />
-        <CTASection />
+        <LogosSection />
+        <ServicosSection />
+        <ComoFazemosSection />
+        <NumerosSection />
+        <StackSection />
+        <CasosSection />
+        <ParaQuemSection />
+        <DepoimentosSection />
+        <FaqSection />
+        <CtaFinalSection />
       </main>
       <Footer />
     </>
