@@ -1,0 +1,61 @@
+---
+title: "SaaS vs Micro-SaaS: qual faz sentido para seu negócio em 2026"
+description: "SaaS completo ou Micro-SaaS enxuto? Entenda as diferenças reais de custo, tempo e risco antes de decidir qual construir em 2026."
+date: "2026-04-16"
+author: "Edivaldo Junior"
+tags: ["SaaS", "Micro-SaaS", "Desenvolvimento de Software", "Produto"]
+---
+
+> **TL;DR:** SaaS é produto para mercado amplo, com time, roadmap e investimento. Micro-SaaS é produto cirúrgico, com escopo fechado, 1 time pequeno e caminho direto pro faturamento. Em 2026, a segunda opção é quase sempre a escolha certa pra começar.
+
+## A diferença real (sem jargão)
+
+**SaaS** é software vendido por assinatura para um mercado grande — você quer atender mil, dez mil, cem mil clientes. Precisa de onboarding self-service, suporte, roadmap, time de produto, marketing, vendas.
+
+**Micro-SaaS** é a mesma ideia em escala reduzida — um problema bem definido, um público bem definido, receita recorrente, **mas** sem a complexidade operacional de um SaaS completo. Um dev + um founder conseguem tocar.
+
+A diferença não é tecnologia. É **ambição, custo e risco**.
+
+## Quando faz sentido cada um
+
+### Construa um Micro-SaaS se:
+- Você tem um problema específico que **você mesmo vive** ou viu de perto
+- O mercado-alvo é nichado (ex: nutricionistas, cartórios, salões de beleza)
+- Você quer validar com **R$ 30k – R$ 60k** de investimento inicial
+- Seu horizonte é **R$ 10k – R$ 50k/mês** de MRR em 12-18 meses
+
+### Construa um SaaS completo se:
+- Você já validou o problema com clientes pagantes
+- Tem capital (ou investidor) para queimar por 18+ meses até break-even
+- O mercado é grande o bastante para justificar time de 5-10+ pessoas
+- Você aceita competir diretamente com players estabelecidos
+
+## Os erros clássicos que vemos em 2026
+
+1. **Começar como SaaS quando devia ser Micro-SaaS.** Empresários locais montam features demais, demoram 18 meses pra lançar, queimam R$ 200k e não validam nada.
+2. **Tratar Micro-SaaS como "SaaS ruim".** Não é. Micro-SaaS é uma categoria por si só — Arvid Kahl, Tyler Tringas, dezenas de makers mostraram que dá pra fazer R$ 20k/mês de MRR com 50 clientes.
+3. **Ignorar a infra séria.** Enxuto não significa precário. Seu Micro-SaaS precisa de autenticação, billing, LGPD, backups, segurança. A diferença é que você não precisa de feature flag, A/B test e microsserviço no dia 1.
+
+## Stack que recomendamos (Micro-SaaS 2026)
+
+- **Frontend:** Next.js 14 + Tailwind + TypeScript
+- **Backend/DB:** Supabase (Postgres + Auth + Storage) ou Convex
+- **Billing:** Stripe + Asaas (para Brasil)
+- **Hospedagem:** Vercel (frontend) + Supabase/Railway (backend)
+- **Observabilidade:** Sentry + Posthog
+
+Essa stack entrega um produto pronto para cobrar em **4 a 8 semanas** de desenvolvimento, custando R$ 200-400/mês de infra até os primeiros mil usuários.
+
+## Como começar
+
+Antes de escrever linha de código:
+
+1. **Escreva o pitch em uma frase:** "Software para [público] resolverem [problema] sem precisar de [dor atual]."
+2. **Liste 20 clientes-alvo.** Por nome, com contato. Se você não consegue listar, o mercado ainda é abstrato demais.
+3. **Tente vender antes de construir.** Uma landing page + pagamento via Stripe já valida se o problema é real.
+
+Só depois disso faça sentido contratar desenvolvimento.
+
+---
+
+Na ConnectLife, já entregamos **Micro-SaaS** em produção (o iEscala é um deles). Se você tem uma ideia e quer um diagnóstico honesto sobre custo/tempo/risco antes de investir, [fale com a gente](/contato).
