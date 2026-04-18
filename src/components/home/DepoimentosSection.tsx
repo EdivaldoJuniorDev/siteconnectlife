@@ -34,7 +34,7 @@ export default function DepoimentosSection() {
               <figure className="relative h-full border border-black/[0.08] bg-white p-8 md:p-10">
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute left-6 top-2 font-playfair text-[80px] leading-none text-accent-green/30"
+                  className="pointer-events-none absolute left-6 top-2 font-playfair text-[80px] leading-none text-accent/30"
                 >
                   &ldquo;
                 </span>
@@ -43,7 +43,7 @@ export default function DepoimentosSection() {
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-3 border-t border-black/[0.06] pt-5">
                   <div
-                    className="flex h-10 w-10 items-center justify-center bg-accent-green/10 font-display text-accent-green"
+                    className="flex h-10 w-10 items-center justify-center bg-accent/10 font-display text-accent"
                     aria-hidden
                   >
                     {d.name.slice(0, 1)}
@@ -56,7 +56,7 @@ export default function DepoimentosSection() {
                   </div>
                   <span
                     aria-label="5 estrelas"
-                    className="ml-auto text-accent-green"
+                    className="ml-auto text-accent"
                   >
                     ★★★★★
                   </span>

@@ -60,7 +60,7 @@ export default function Terminal({ lines, title = "bash" }: Props) {
               <span
                 className={
                   line.prompt === "✓"
-                    ? "text-accent-green"
+                    ? "text-accent"
                     : "text-white/40"
                 }
               >
@@ -70,7 +70,7 @@ export default function Terminal({ lines, title = "bash" }: Props) {
             <span
               className={
                 line.color === "green"
-                  ? "text-accent-green"
+                  ? "text-accent"
                   : line.color === "dim"
                     ? "text-white/40"
                     : ""
@@ -83,7 +83,7 @@ export default function Terminal({ lines, title = "bash" }: Props) {
         {visibleCount === lines.length && (
           <span
             aria-hidden
-            className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-accent-green animate-blink"
+            className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-accent animate-blink"
           />
         )}
       </div>

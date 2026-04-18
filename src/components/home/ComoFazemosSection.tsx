@@ -66,7 +66,7 @@ export default function ComoFazemosSection() {
         <div className="relative">
           <div
             aria-hidden
-            className="absolute bottom-6 left-[35px] top-6 w-px bg-accent-green/30 md:left-[43px]"
+            className="absolute bottom-6 left-[35px] top-6 w-px bg-accent/30 md:left-[43px]"
           />
           <ol className="space-y-10 md:space-y-14">
             {STEPS.map((step, i) => (
@@ -82,7 +82,7 @@ export default function ComoFazemosSection() {
                     <p className="mt-2 text-sm leading-relaxed text-white/50 md:text-[15px]">
                       {step.desc}
                     </p>
-                    <span className="mt-3 inline-flex items-center border border-accent-green/40 px-2.5 py-1 text-[10px] uppercase tracking-wider text-accent-green">
+                    <span className="mt-3 inline-flex items-center border border-accent/40 px-2.5 py-1 text-[10px] uppercase tracking-wider text-accent">
                       {step.duration}
                     </span>
                   </div>

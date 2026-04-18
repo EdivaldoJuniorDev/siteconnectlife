@@ -35,11 +35,6 @@ const config: Config = {
           light: "#DA6230",
           dark: "#A84215",
         },
-        "accent-green": {
-          DEFAULT: "#1D9E75",
-          light: "#2BB589",
-          dark: "#167D5C",
-        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

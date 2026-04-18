@@ -64,8 +64,8 @@ export default function ParaQuemSection() {
         <div className="grid gap-[1px] bg-white/10 md:grid-cols-3">
           {PERFIS.map((p, i) => (
             <FadeUp key={p.title} delay={i * 0.08} className="bg-dark-bg">
-              <div className="group h-full flex flex-col p-8 md:p-10 border-t-2 border-t-transparent transition-colors hover:border-t-accent-green">
-                <div className="text-accent-green">{p.icon}</div>
+              <div className="group h-full flex flex-col p-8 md:p-10 border-t-2 border-t-transparent transition-colors hover:border-t-accent">
+                <div className="text-accent">{p.icon}</div>
                 <h3 className="mt-6 font-display text-xl text-white md:text-2xl">
                   {p.title}
                 </h3>
@@ -75,7 +75,7 @@ export default function ParaQuemSection() {
                 <ul className="mt-5 space-y-2 text-sm text-white/60">
                   {p.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <span className="mt-1 text-accent-green">→</span>
+                      <span className="mt-1 text-accent">→</span>
                       <span>{b}</span>
                     </li>
                   ))}
@@ -84,7 +84,7 @@ export default function ParaQuemSection() {
                   {p.cta.internal ? (
                     <Link
                       href={p.cta.href}
-                      className="inline-flex items-center gap-1.5 text-sm text-accent-green transition-colors hover:text-accent-green-light"
+                      className="inline-flex items-center gap-1.5 text-sm text-accent transition-colors hover:text-accent-light"
                     >
                       {p.cta.label} →
                     </Link>
@@ -93,7 +93,7 @@ export default function ParaQuemSection() {
                       href={p.cta.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-accent-green transition-colors hover:text-accent-green-light"
+                      className="inline-flex items-center gap-1.5 text-sm text-accent transition-colors hover:text-accent-light"
                     >
                       {p.cta.label} →
                     </a>

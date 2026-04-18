@@ -99,7 +99,7 @@ export default function ServicosSection() {
     <section id="servicos" className="bg-surface-light py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <FadeUp className="mb-14 max-w-xl">
-          <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-accent-green">
+          <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-accent">
             Serviços
           </p>
           <h2 className="font-display text-3xl md:text-[40px] leading-[1.1] text-text-primary">
@@ -138,7 +138,7 @@ function ServicoCard({ servico }: { servico: Servico }) {
   return (
     <article
       className={`group relative flex h-full flex-col bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:border-black/20 md:p-10 ${
-        servico.accent ? "border-t-2 border-t-accent-green" : ""
+        servico.accent ? "border-t-2 border-t-accent" : ""
       }`}
     >
       <div className="mb-6 flex items-start justify-between gap-4">
@@ -146,7 +146,7 @@ function ServicoCard({ servico }: { servico: Servico }) {
         <span
           className={`inline-flex items-center px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider ${
             servico.badgeTone === "green"
-              ? "bg-accent-green/10 text-accent-green"
+              ? "bg-accent/10 text-accent"
               : "bg-black/[0.04] text-text-secondary"
           }`}
         >
@@ -166,7 +166,7 @@ function ServicoCard({ servico }: { servico: Servico }) {
         <ul className="mt-6 space-y-2 text-sm text-text-secondary">
           {servico.bullets.map((b) => (
             <li key={b} className="flex items-start gap-2">
-              <span className="mt-1 text-accent-green">→</span>
+              <span className="mt-1 text-accent">→</span>
               <span>{b}</span>
             </li>
           ))}
@@ -177,7 +177,7 @@ function ServicoCard({ servico }: { servico: Servico }) {
         {...ctaProps}
         className={`mt-8 inline-flex w-fit items-center gap-1.5 text-sm transition-colors ${
           servico.accent
-            ? "text-accent-green hover:text-accent-green-dark"
+            ? "text-accent hover:text-accent-dark"
             : "text-text-secondary hover:text-text-primary"
         }`}
       >

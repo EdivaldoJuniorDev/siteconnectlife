@@ -56,7 +56,7 @@ export default function NumerosSection() {
                     to={n.value}
                     suffix={n.suffix}
                     className={`font-playfair text-5xl md:text-[72px] leading-none ${
-                      n.accent ? "text-accent-green" : "text-text-primary"
+                      n.accent ? "text-accent" : "text-text-primary"
                     }`}
                   />
                   {n.unit && (

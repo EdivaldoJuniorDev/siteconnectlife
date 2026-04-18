@@ -101,7 +101,7 @@ function CasoCard({ caso }: { caso: Caso }) {
       <p className="mt-3 text-sm leading-relaxed text-text-secondary">
         {caso.desc}
       </p>
-      <p className="mt-4 text-sm font-medium text-accent-green">
+      <p className="mt-4 text-sm font-medium text-accent">
         {caso.result}
       </p>
       <div className="mt-6 flex flex-wrap gap-2 border-t border-black/[0.06] pt-5 text-[11px] text-text-secondary/80">
@@ -112,7 +112,7 @@ function CasoCard({ caso }: { caso: Caso }) {
         ))}
       </div>
       {caso.href && (
-        <span className="mt-5 text-sm text-accent-green transition-colors group-hover:text-accent-green-dark">
+        <span className="mt-5 text-sm text-accent transition-colors group-hover:text-accent-dark">
           Ver demos →
         </span>
       )}
