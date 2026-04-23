@@ -497,6 +497,7 @@ function AntesDepois() {
                 alt="Depois do clareamento"
                 fill
                 className="object-cover"
+                style={{ filter: "brightness(1.1) contrast(1.15)" }}
                 sizes="(max-width: 768px) 100vw, 896px"
                 priority
               />
@@ -512,6 +513,7 @@ function AntesDepois() {
                 alt="Antes do clareamento"
                 fill
                 className="object-cover"
+                style={{ filter: "brightness(1.1) contrast(1.15)" }}
                 sizes="(max-width: 768px) 100vw, 896px"
                 priority
               />
