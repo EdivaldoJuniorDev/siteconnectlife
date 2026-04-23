@@ -54,7 +54,7 @@ const CASOS: Caso[] = [
 
 export default function CasosSection() {
   return (
-    <section className="bg-surface-warm py-24 md:py-32">
+    <section id="portfolio" className="bg-surface-warm py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <FadeUp className="mb-14 max-w-xl">
           <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-text-secondary">

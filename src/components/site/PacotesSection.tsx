@@ -25,7 +25,7 @@ const Check = () => (
 
 export default function PacotesSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-[#F7F5F2] noise-bg">
+    <section id="pacotes" className="relative py-24 md:py-32 bg-[#F7F5F2] noise-bg">
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

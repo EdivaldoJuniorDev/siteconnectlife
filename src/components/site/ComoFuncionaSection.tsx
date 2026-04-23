@@ -34,7 +34,7 @@ const steps = [
 
 export default function ComoFuncionaSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-white noise-bg">
+    <section id="como-funciona" className="relative py-24 md:py-32 bg-white noise-bg">
       <div className="relative z-10 max-w-3xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
