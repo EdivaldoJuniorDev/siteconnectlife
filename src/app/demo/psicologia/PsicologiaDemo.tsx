@@ -86,10 +86,10 @@ function Hero() {
             viewport={vp} transition={{ duration: 1, delay: 0.4 }}
             className="hidden lg:flex flex-col items-end justify-center pr-8"
           >
-            <span className="font-cormorant text-[180px] leading-none text-[#C8DBBB]/40 select-none">
+            <span className="font-cormorant text-[180px] leading-none text-[#4A6741]/70 select-none drop-shadow-sm">
               &ldquo;
             </span>
-            <p className="text-[#6B6358]/60 text-sm italic max-w-[240px] text-right -mt-12 leading-relaxed">
+            <p className="text-[#1E1A14] text-sm italic max-w-[240px] text-right -mt-12 leading-relaxed font-medium drop-shadow-sm">
               A escuta genuína é o primeiro passo para a transformação.
             </p>
           </motion.div>
