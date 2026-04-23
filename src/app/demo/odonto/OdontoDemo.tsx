@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 import BannerDemo from "@/components/demo/shared/BannerDemo";
 import GlassBadge from "@/components/demo/shared/GlassBadge";
 
@@ -489,39 +490,31 @@ function AntesDepois() {
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
           >
-            {/* DEPOIS (full background) — gradient representing "after" */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#EFF4F1] via-[#d4edda] to-[#95D5B2]">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#1A4731]/10 flex items-center justify-center">
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1A4731" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 4c-5 0-8 3.5-8 8 0 3 1.5 5.5 4 7l1.5 5h5L22 19c2.5-1.5 4-4 4-7 0-4.5-3-8-8-8Z" />
-                      <path d="M15.5 24v4c0 1.5 1 2.5 2.5 2.5s2.5-1 2.5-2.5v-4" />
-                    </svg>
-                  </div>
-                  <p className="font-cormorant text-xl text-[#1A4731] font-semibold">Sorriso renovado</p>
-                  <p className="text-xs text-[#2D6A4F] mt-1">Resultado real do clareamento</p>
-                </div>
-              </div>
+            {/* DEPOIS (full background) */}
+            <div className="absolute inset-0">
+              <Image
+                src="/images/pos-do-clareamento.png"
+                alt="Depois do clareamento"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
             </div>
 
-            {/* ANTES (clipped) — gradient representing "before" */}
+            {/* ANTES (clipped) */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-[#e8e4df] via-[#d5d0c8] to-[#c2bdb4]"
+              className="absolute inset-0"
               style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-black/5 flex items-center justify-center">
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#5C5C58" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 4c-5 0-8 3.5-8 8 0 3 1.5 5.5 4 7l1.5 5h5L22 19c2.5-1.5 4-4 4-7 0-4.5-3-8-8-8Z" />
-                      <path d="M15.5 24v4c0 1.5 1 2.5 2.5 2.5s2.5-1 2.5-2.5v-4" />
-                    </svg>
-                  </div>
-                  <p className="font-cormorant text-xl text-[#5C5C58] font-semibold">Sorriso original</p>
-                  <p className="text-xs text-[#5C5C58]/70 mt-1">Antes do tratamento</p>
-                </div>
-              </div>
+              <Image
+                src="/images/antes-do-clareamento.png"
+                alt="Antes do clareamento"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
             </div>
 
             {/* Divider line + handle */}
