@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import BannerDemo from "@/components/demo/shared/BannerDemo";
 import GlassBadge from "@/components/demo/shared/GlassBadge";
 
@@ -560,24 +561,30 @@ function AntesDepois() {
             onPointerUp={onPointerUp}
           >
             {/* DEPOIS — full background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#C9A84C]/30 via-[#E8D5A3]/20 to-[#FAF7F2]/30">
-              <div className="flex h-full items-center justify-center">
-                <span className="font-cormorant text-lg font-bold text-white/30">
-                  Resultado real do procedimento
-                </span>
-              </div>
+            <div className="absolute inset-0">
+              <Image
+                src="/images/depois-preenchimento.jpg"
+                alt="Depois do preenchimento"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 672px"
+                priority
+              />
             </div>
 
             {/* ANTES — clipped */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-[#7A6A58]/40 via-[#5A4A38]/30 to-[#3A2A18]/40"
+              className="absolute inset-0"
               style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
             >
-              <div className="flex h-full items-center justify-center">
-                <span className="font-cormorant text-lg font-bold text-white/30">
-                  Antes do procedimento
-                </span>
-              </div>
+              <Image
+                src="/images/antes-preenchimento.jpg"
+                alt="Antes do preenchimento"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 672px"
+                priority
+              />
             </div>
 
             {/* Labels */}
