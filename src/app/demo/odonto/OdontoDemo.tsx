@@ -601,12 +601,12 @@ function Depoimentos() {
         {/* Floating notification badges */}
         <div className="relative">
           <div className="absolute -top-8 left-4 hidden md:block">
-            <GlassBadge variant="light" float="slow" className="bg-[#1A4731]/10 backdrop-blur-sm border-[#1A4731]/10 text-[#1A4731]">
+            <GlassBadge variant="light" float="slow" className="bg-[#1A4731] border-[#1A4731] text-white">
               +12 avaliações este mês
             </GlassBadge>
           </div>
           <div className="absolute -top-6 right-8 hidden md:block">
-            <GlassBadge variant="light" float="fast" className="bg-[#95D5B2]/20 backdrop-blur-sm border-[#95D5B2]/30 text-[#1A4731]">
+            <GlassBadge variant="light" float="fast" className="bg-[#2D6A4F] border-[#2D6A4F] text-white">
               Nota 4.9 no Google
             </GlassBadge>
           </div>
