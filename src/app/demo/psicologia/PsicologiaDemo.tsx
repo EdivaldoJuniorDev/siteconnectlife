@@ -31,68 +31,59 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#F5F2EE]/[0.92] via-[#F5F2EE]/60 to-transparent" />
 
       <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center">
-          {/* Left content */}
-          <div className="max-w-xl">
-            <motion.div
-              initial={{ width: 0 }} whileInView={{ width: 40 }}
-              viewport={vp} transition={{ duration: 0.6 }}
-              className="h-[2px] bg-[#7A9E6E] mb-6"
-            />
-            <motion.h1
-              initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
-              className="font-cormorant text-4xl sm:text-5xl lg:text-[58px] leading-[1.12] text-[#1E1A14]"
-            >
-              Um espaço seguro para você{" "}
-              <span className="text-[#4A6741] italic">se encontrar.</span>
-            </motion.h1>
-            <motion.p
-              initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
-              className="mt-6 text-[#6B6358] text-base leading-[1.8] max-w-[440px]"
-            >
-              Psicoterapia individual para adultos que buscam autoconhecimento,
-              equilíbrio emocional e qualidade de vida. Atendimento presencial em
-              Manaus e online para todo o Brasil.
-            </motion.p>
-            <motion.div
-              initial="hidden" whileInView="show" viewport={vp} custom={2} variants={fade}
-              className="mt-8 flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href={WA} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#4A6741] text-white text-sm font-semibold tracking-wide transition-opacity hover:opacity-90"
-              >
-                Agendar primeira sessão
-                <span className="text-base">&#8594;</span>
-              </a>
-              <a
-                href="#como-funciona"
-                className="inline-flex items-center justify-center px-7 py-3.5 border border-[#6B6358] text-[#6B6358] text-sm font-semibold tracking-wide transition-colors hover:bg-[#6B6358]/5"
-              >
-                Saiba como funciona &#8595;
-              </a>
-            </motion.div>
-            <motion.p
-              initial="hidden" whileInView="show" viewport={vp} custom={3} variants={fade}
-              className="mt-4 text-[#6B6358] text-xs"
-            >
-              Primeira sessão de acolhimento sem compromisso.
-            </motion.p>
-          </div>
-
-          {/* Right decorative quote */}
+        <div className="max-w-xl">
           <motion.div
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-            viewport={vp} transition={{ duration: 1, delay: 0.4 }}
-            className="hidden lg:flex flex-col items-end justify-center pr-8"
+            initial={{ width: 0 }} whileInView={{ width: 40 }}
+            viewport={vp} transition={{ duration: 0.6 }}
+            className="h-[2px] bg-[#7A9E6E] mb-6"
+          />
+          <motion.h1
+            initial="hidden" whileInView="show" viewport={vp} custom={0} variants={fade}
+            className="font-cormorant text-4xl sm:text-5xl lg:text-[58px] leading-[1.12] text-[#1E1A14]"
           >
-            <span className="font-cormorant text-[180px] leading-none text-[#4A6741]/70 select-none drop-shadow-sm">
-              &ldquo;
-            </span>
-            <p className="text-[#1E1A14] text-sm italic max-w-[240px] text-right -mt-12 leading-relaxed font-medium drop-shadow-sm">
-              A escuta genuína é o primeiro passo para a transformação.
-            </p>
+            Um espaço seguro para você{" "}
+            <span className="text-[#4A6741] italic">se encontrar.</span>
+          </motion.h1>
+          <motion.p
+            initial="hidden" whileInView="show" viewport={vp} custom={1} variants={fade}
+            className="mt-6 text-[#6B6358] text-base leading-[1.8] max-w-[440px]"
+          >
+            Psicoterapia individual para adultos que buscam autoconhecimento,
+            equilíbrio emocional e qualidade de vida. Atendimento presencial em
+            Manaus e online para todo o Brasil.
+          </motion.p>
+          <motion.div
+            initial="hidden" whileInView="show" viewport={vp} custom={2} variants={fade}
+            className="mt-8 flex flex-col sm:flex-row gap-4"
+          >
+            <a
+              href={WA} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#4A6741] text-white text-sm font-semibold tracking-wide transition-opacity hover:opacity-90"
+            >
+              Agendar primeira sessão
+              <span className="text-base">&#8594;</span>
+            </a>
+            <a
+              href="#como-funciona"
+              className="inline-flex items-center justify-center px-7 py-3.5 border border-[#6B6358] text-[#6B6358] text-sm font-semibold tracking-wide transition-colors hover:bg-[#6B6358]/5"
+            >
+              Saiba como funciona &#8595;
+            </a>
           </motion.div>
+          <motion.p
+            initial="hidden" whileInView="show" viewport={vp} custom={3} variants={fade}
+            className="mt-4 text-[#6B6358] text-xs"
+          >
+            Primeira sessão de acolhimento sem compromisso.
+          </motion.p>
+          <motion.blockquote
+            initial="hidden" whileInView="show" viewport={vp} custom={4} variants={fade}
+            className="mt-8 border-l-2 border-[#4A6741] pl-4"
+          >
+            <p className="text-[#1E1A14]/80 text-sm italic leading-relaxed">
+              &ldquo;A escuta genuína é o primeiro passo para a transformação.&rdquo;
+            </p>
+          </motion.blockquote>
         </div>
       </div>
     </section>
